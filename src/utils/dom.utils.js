@@ -1,6 +1,6 @@
-const { JSDOM } = require('jsdom');
+import { JSDOM } from 'jsdom';
 
-const GetDomFromURL = async (url) => {
+export const GetDomFromURL = async (url) => {
   if (!url) throw new Error('URL is required');
   try {
     const dom = await JSDOM.fromURL(url);
@@ -11,14 +11,9 @@ const GetDomFromURL = async (url) => {
   };
 }
 
-const GetTextContent = (dom, selector) => {
+export const GetTextContent = (dom, selector) => {
   if (!dom.window) throw new Error('DOM must contains a window property');
   if (!selector) throw new Error('Selector is required');
 
   return dom.window.document.querySelector(selector).textContent;
-}
-
-module.exports = {
-  GetDomFromURL,
-  GetTextContent,
 }

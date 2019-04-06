@@ -1,55 +1,55 @@
-const { GetTextContent } = require('../utils/dom.utils')
+import { GetTextContent } from '../utils/dom.utils';
 
-class Character {
+export default class Character {
   constructor(dom) {
     this._dom = dom;
-  }
+  };
 
   PlayerDoesntExists() {
-    const selector = `#characters > div.Border_2 > div > div > table > tbody > tr:nth-child(1) > td > b`
-    const title = GetTextContent(this._dom, selector)
+    const selector = '#characters > div.Border_2 > div > div > table > tbody > tr:nth-child(1) > td > b';
+    const title = GetTextContent(this._dom, selector);
 
-    return /not find/gi.test(title)
-  }
+    return /not find/gi.test(title);
+  };
 
   get name() {
-    const selector = `#characters > div.Border_2 > div > div > table:nth-child(1) > tbody > tr:nth-child(2) > td:nth-child(2)`
-    return GetTextContent(this._dom, selector)
-  }
+    const selector = '#characters > div.Border_2 > div > div > table:nth-child(1) > tbody > tr:nth-child(2) > td:nth-child(2)';
+    return GetTextContent(this._dom, selector);
+  };
   get sex() {
-    const selector = `#characters > div.Border_2 > div > div > table:nth-child(1) > tbody > tr:nth-child(3) > td:nth-child(2)`
-    return GetTextContent(this._dom, selector)
-  }
+    const selector = '#characters > div.Border_2 > div > div > table:nth-child(1) > tbody > tr:nth-child(3) > td:nth-child(2)';
+    return GetTextContent(this._dom, selector);
+  };
   get vocation() {
-    const selector = `#characters > div.Border_2 > div > div > table:nth-child(1) > tbody > tr:nth-child(4) > td:nth-child(2)`
-    return GetTextContent(this._dom, selector)
-  }
+    const selector = '#characters > div.Border_2 > div > div > table:nth-child(1) > tbody > tr:nth-child(4) > td:nth-child(2)';
+    return GetTextContent(this._dom, selector);
+  };
   get level() {
-    const selector = `#characters > div.Border_2 > div > div > table:nth-child(1) > tbody > tr:nth-child(5) > td:nth-child(2)`
-    return GetTextContent(this._dom, selector)
-  }
+    const selector = '#characters > div.Border_2 > div > div > table:nth-child(1) > tbody > tr:nth-child(5) > td:nth-child(2)';
+    return GetTextContent(this._dom, selector);
+  };
   get achievementPoints() {
-    const selector = `#characters > div.Border_2 > div > div > table:nth-child(1) > tbody > tr:nth-child(6) > td:nth-child(2)`
-    return GetTextContent(this._dom, selector)
-  }
+    const selector = '#characters > div.Border_2 > div > div > table:nth-child(1) > tbody > tr:nth-child(6) > td:nth-child(2)';
+    return GetTextContent(this._dom, selector);
+  };
   get world() {
-    const selector = `#characters > div.Border_2 > div > div > table:nth-child(1) > tbody > tr:nth-child(7) > td:nth-child(2)`
-    return GetTextContent(this._dom, selector)
-  }
+    const selector = '#characters > div.Border_2 > div > div > table:nth-child(1) > tbody > tr:nth-child(7) > td:nth-child(2)';
+    return GetTextContent(this._dom, selector);
+  };
   get residence() {
-    const selector = `#characters > div.Border_2 > div > div > table:nth-child(1) > tbody > tr:nth-child(8) > td:nth-child(2)`
-    return GetTextContent(this._dom, selector)
-  }
+    const selector = '#characters > div.Border_2 > div > div > table:nth-child(1) > tbody > tr:nth-child(8) > td:nth-child(2)';
+    return GetTextContent(this._dom, selector);
+  };
   get lastLogin() {
-    const selector = `#characters > div.Border_2 > div > div > table:nth-child(1) > tbody > tr:nth-child(9) > td:nth-child(2)`
-    return GetTextContent(this._dom, selector)
-  }
+    const selector = '#characters > div.Border_2 > div > div > table:nth-child(1) > tbody > tr:nth-child(9) > td:nth-child(2)';
+    return GetTextContent(this._dom, selector);
+  };
   get accountStatus() {
-    const selector = `#characters > div.Border_2 > div > div > table:nth-child(1) > tbody > tr:nth-child(10) > td:nth-child(2)`
-    return GetTextContent(this._dom, selector)
-  }
+    const selector = '#characters > div.Border_2 > div > div > table:nth-child(1) > tbody > tr:nth-child(10) > td:nth-child(2)';
+    return GetTextContent(this._dom, selector);
+  };
  
-  get allCharacterInformation(){
+  get allCharacterInformation() {
     return {
       name: this.name,
       sex: this.sex,
@@ -60,8 +60,6 @@ class Character {
       residence: this.residence,
       lastLogin: this.lastLogin,
       accountStatus: this.accountStatus,
-    }
-  }
-}
-
-module.exports = Character;
+    };
+  };
+};

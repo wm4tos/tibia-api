@@ -1,12 +1,12 @@
-const { GraphQLObjectType } = require('graphql')
+import { GraphQLObjectType } from 'graphql';
 
-const player = require('./player/player');
+import player from './player/player';
 
 const fields = {
   player,
 }
 
-module.exports = new GraphQLObjectType({
+export default new GraphQLObjectType({
   name: 'RootQuery',
   description: 'All queries in the server',
   fields,

@@ -1,7 +1,7 @@
-const { GraphQLSchema } = require('graphql')
+import { GraphQLSchema } from 'graphql';
 
-const RootQuery = require('./queries');
+import RootQuery from './queries';
 
-module.exports = new GraphQLSchema({
+export default new GraphQLSchema({
   query: RootQuery,
 });

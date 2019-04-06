@@ -1,6 +1,6 @@
-const { GetDomFromURL } = require('../utils/dom.utils');
+import { GetDomFromURL } from '../utils/dom.utils';
 
-const Character = require('../models/Character');
+import Character from '../models/Character';
 
 const GetCharacterInfos = (playerName) => {
   if (!playerName) throw new Error('Player name is required');
@@ -21,9 +21,6 @@ const GetCharacterInfos = (playerName) => {
       reject(err);
     };
   });
+};
 
-}
-
-module.exports = {
-  GetCharacterInfos,
-}
+export default GetCharacterInfos;

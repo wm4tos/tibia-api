@@ -1,10 +1,10 @@
-const { GraphQLString } = require('graphql')
+import { GraphQLString } from 'graphql';
 
-const CharacterType = require('./character/character');
+import CharacterType from './character/character';
 
-const { GetCharacterInfos } = require('../../services/character.service');
+import GetCharacterInfos from '../../services/character.service';
 
-module.exports = {
+export default {
   type: CharacterType,
   args: {
     nickname: {

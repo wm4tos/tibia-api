@@ -1,25 +1,23 @@
-const express = require('express');
+import express from 'express';
 
-const graphqlHTTP = require('express-graphql')
+import graphqlHTTP from 'express-graphql';
 
-const schema = require('../schemas/schema');
+import schema from '../schemas/schema';
 
-module.exports = () => {
-  const app = express();
+const app = express();
 
-  app.use((req, res, next) => {
-    res.header('Access-Control-Allow-Origin', '*')
-    res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept')
-    next()
-  })
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', '*')
+  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept')
+  next()
+});
 
-  app.use(
-    '/graphiql',
-    graphqlHTTP({
-      schema,
-      graphiql: true,
-    }),
-  )
+app.use(
+  '/graphiql',
+  graphqlHTTP({
+    schema,
+    graphiql: true,
+  }),
+);
 
-  return app;
-};
+export default app;
