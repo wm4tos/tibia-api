@@ -2,6 +2,8 @@ const { GraphQLString } = require('graphql')
 
 const CharacterType = require('./character/character');
 
+const { GetCharacterInfos } = require('../../services/character.service');
+
 module.exports = {
   type: CharacterType,
   args: {
@@ -9,15 +11,5 @@ module.exports = {
       type: GraphQLString,
     },
   },
-  resolve: (root, args) => ({
-    name: '',
-    sex: '',
-    vocation: '',
-    level: '',
-    achievementPoints: '',
-    world: '',
-    residence: '',
-    lastLogin: '',
-    accountStatus: '',
-  })
+  resolve: (root, args) => GetCharacterInfos(args.nickname),
 };
