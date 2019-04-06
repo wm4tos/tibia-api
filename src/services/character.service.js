@@ -1,4 +1,6 @@
-const { GetDomFromURL, GetTextContent } = require('../utils/dom.utils');
+const { GetDomFromURL } = require('../utils/dom.utils');
+
+const Character = require('../models/Character');
 
 const GetCharacterInfos = async (playerName) => {
   if (!playerName) throw new Error('Player name is required');
@@ -6,8 +8,9 @@ const GetCharacterInfos = async (playerName) => {
   const url = `https://secure.tibia.com/community/?subtopic=characters&name=${playerName}`;
   const dom = await GetDomFromURL(url);
   
-  const playerNameSelector = `#characters > div.Border_2 > div > div > table:nth-child(1) > tbody > tr:nth-child(2) > td:nth-child(2)`;
-  const playerNameFromDOM = GetTextContent(dom, playerNameSelector);
+  const character = new Character(dom);
+
+  console.log(character.name);
 }
 
 module.exports = {
