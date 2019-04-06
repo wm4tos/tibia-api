@@ -8,3 +8,7 @@ Esta API busca nomes de usuário de players no Tibia e foi construida com Node.j
 
 ## Como testar as queries?
 Após rodar o projeto, entre em `localhost:3000/graphiql`.
+
+## Sugestões?
+Me mande um email!
+`wrickee@gmail.com`
