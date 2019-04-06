@@ -1,11 +1,23 @@
 const { GraphQLString } = require('graphql')
 
+const CharacterType = require('./character/character');
+
 module.exports = {
-  type: GraphQLString,
+  type: CharacterType,
   args: {
     nickname: {
       type: GraphQLString,
     },
   },
-  resolve: (root, args) => `Informations about ${args.nickname}`,
+  resolve: (root, args) => ({
+    name: '',
+    sex: '',
+    vocation: '',
+    level: '',
+    achievementPoints: '',
+    world: '',
+    residence: '',
+    lastLogin: '',
+    accountStatus: '',
+  })
 };
