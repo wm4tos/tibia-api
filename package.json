@@ -1,0 +1,19 @@
+{
+  "name": "tibia-api",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Wesley Matos",
+  "license": "MIT",
+  "scripts": {
+    "dev": "nodemon src/index.js"
+  },
+  "dependencies": {
+    "express": "^4.16.4",
+    "express-graphql": "^0.7.1",
+    "graphql": "^14.2.1",
+    "jsdom": "^14.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.10"
+  }
+}
