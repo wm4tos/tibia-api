@@ -14,7 +14,7 @@ module.exports = () => {
   })
 
   app.use(
-    '/',
+    '/graphiql',
     graphqlHTTP({
       schema,
       graphiql: true,
