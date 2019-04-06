@@ -11,8 +11,8 @@ const GetCharacterInfos = (playerName) => {
       const dom = await GetDomFromURL(url);
 
       const character = new Character(dom);
-      
-      if(character.PlayerDoesntExists()) {
+
+      if (character.PlayerDoesntExists()) {
         reject(new Error("Player doesn't exists"));
       }
 
