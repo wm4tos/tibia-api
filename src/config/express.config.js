@@ -1,5 +1,9 @@
 const express = require('express');
 
+const graphqlHTTP = require('express-graphql')
+
+const schema = require('../schemas/schema');
+
 module.exports = () => {
   const app = express();
 
@@ -9,7 +13,13 @@ module.exports = () => {
     next()
   })
 
-  app.get('/', (req, res) => res.json({ text: 'success' }));
+  app.use(
+    '/',
+    graphqlHTTP({
+      schema,
+      graphiql: true,
+    }),
+  )
 
   return app;
 };
