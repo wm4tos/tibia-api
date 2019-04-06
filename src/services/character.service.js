@@ -8,9 +8,7 @@ const GetCharacterInfos = async (playerName) => {
   const url = `https://secure.tibia.com/community/?subtopic=characters&name=${playerName}`;
   const dom = await GetDomFromURL(url);
   
-  const character = new Character(dom);
-
-  console.log(character.name);
+  return new Character(dom).allCharacterInformation;
 }
 
 module.exports = {
